@@ -1,5 +1,51 @@
-<p>Hello world!</p>
-<p>Hdqwdwqdwqdqwdqwdwqello world!</p>
-<p>Hello world!</p>
-<p>Hello world!</p>
-<p>Hello world!</p>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+		<title>CodeSilhouette</title>
+
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:400,700' type='text/css'>
+		<link rel="stylesheet" href="extras.css">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="innerWrapper">
+
+				<h1 id="heading">CodeSilhouette</h1>
+				<h2>Paste in your code and hit Generate</h2>
+
+				<div id="fauxForm">
+					<textarea class="form-control" id="codeArea" style="height: 200px;" placeholder="Paste code here"></textarea>
+					<button onclick="drawSilhouette()" class="btn btn-default btn-lg btn-block">Generate</button>
+				</div>
+
+				<canvas id="myCanvas" style="display: none"></canvas>
+				<p><img id="canvasImg" alt="Right click to save" style="display: none"></p>
+				<p id="permalinkWrapper" style="display: none"><a id="permalink" href="#">Permalink to this silhouette</a></p>
+
+			</div>
+		</div><!-- /.container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="codesilhouette.min.js"></script>
+		<script>if(screen.width>=700){$("#innerWrapper").css("width",$("h1").width()+50);};</script>
+	</body>
+</html>
