@@ -12,7 +12,7 @@
 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:400,700' type='text/css'>
-		<link rel="stylesheet" href="extras.min.css">
+		<link rel="stylesheet" href="extras.css">
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -22,23 +22,30 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div id="innerWrapper">
+		<div id="wrap">
+			<div class="container">
+				<div id="innerWrapper">
 
-				<h1 id="heading">CodeSilhouette</h1>
-				<h2>Paste in your code and hit Generate</h2>
+					<h1 id="heading">CodeSilhouette</h1>
+					<h2>Paste in your code and hit Generate</h2>
 
-				<div id="fauxForm">
-					<textarea class="form-control" id="codeArea" style="height: 200px;" placeholder="Paste code here"></textarea>
-					<button onclick="drawSilhouette()" class="btn btn-default btn-lg btn-block">Generate</button>
+					<div id="fauxForm">
+						<textarea class="form-control" id="codeArea" style="height: 200px;" placeholder="Paste code here"></textarea>
+						<button onclick="drawSilhouette()" class="btn btn-default btn-lg btn-block">Generate</button>
+					</div>
+
+					<canvas id="myCanvas" style="display: none"></canvas>
+					<p><img id="canvasImg" alt="Right click to save" style="display: none"></p>
+					<p id="permalinkWrapper" style="display: none"><a id="permalink" href="#">Permalink to this silhouette</a></p>
 				</div>
-
-				<canvas id="myCanvas" style="display: none"></canvas>
-				<p><img id="canvasImg" alt="Right click to save" style="display: none"></p>
-				<p id="permalinkWrapper" style="display: none"><a id="permalink" href="#">Permalink to this silhouette</a></p>
-
 			</div>
-		</div><!-- /.container -->
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<p>CodeSilhouette is a project developed over the weekend by <a href="http://chainsawpolice.tumblr.com">J. Merriman</a>.<br />Check it out on <a href="https://github.com/ChainsawPolice/codesilhouette">GitHub</a></p>
+			</div>
+		</div>
 
 
 		<!-- Bootstrap core JavaScript
