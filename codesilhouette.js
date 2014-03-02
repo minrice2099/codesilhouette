@@ -6,9 +6,10 @@ var drawSilhouette = (function() {
 	var silhouetteColour = "#333";
 
 	return function() {
-		s = $("#codeArea").val();
+		s = document.getElementById("codeArea").value;
 	
-		var lines = s.split("\n"); 
+		// Strip carriage returns (Windows platform only), then split on new lines
+		var lines = s.replace(/\r/g, "").split("\n"); 
 		var allLineLengths = new Array(); 
 	
 		var longestLine = 0
@@ -39,9 +40,10 @@ var drawSilhouette = (function() {
 	
 		var dataURL = canvas.toDataURL();
 	
-		$("#canvasImg").css("display", "inline");
-		$("#permalinkWrapper").css("display", "inline");
-		document.getElementById('canvasImg').src = dataURL;
-		$("#permalink").attr("href", dataURL);	
+		var canvasImg = document.getElementById("canvasImg");
+		canvasImg.src = dataURL;
+		canvasImg.style.display = "inline";
+		document.getElementById("permalinkWrapper").style.display = "inline";
+		document.getElementById("permalink").href = dataURL;
 	}
 }());
