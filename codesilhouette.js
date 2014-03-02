@@ -14,6 +14,11 @@ var drawSilhouette = (function() {
 
 	return function() {
 		s = document.getElementById("codeArea").value;
+		
+		// Basic sanity check for any actual input
+		if (!s) {
+			return;
+		}
 	
 		// Strip carriage returns (Windows platform only), then split on new lines
 		var lines = s.replace(/\r/g, "").split("\n");
