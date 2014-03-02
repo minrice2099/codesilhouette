@@ -1,4 +1,9 @@
 var drawSilhouette = (function() {
+	var canvas = document.getElementById('myCanvas');
+	var context = canvas.getContext('2d');
+	var unitSize = 5; 
+	var silhouetteColour = "#333";
+	
 	// Draws a line of code for the silhouette, not an actual line stroke.
 	function drawLine(rectY, rectWidth) {
 		context.beginPath();
@@ -6,12 +11,6 @@ var drawSilhouette = (function() {
 		context.fillStyle = silhouetteColour;
 		context.fill();
 	};
-
-	var canvas = document.getElementById('myCanvas');
-	var context = canvas.getContext('2d');
-	
-	var unitSize = 5; 
-	var silhouetteColour = "#333";
 
 	return function() {
 		s = document.getElementById("codeArea").value;
