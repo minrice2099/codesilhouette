@@ -1,4 +1,12 @@
 var drawSilhouette = (function() {
+	// Draws a line of code for the silhouette, not an actual line stroke.
+	function drawLine(rectY, rectWidth) {
+		context.beginPath();
+		context.rect(0, rectY, rectWidth, unitSize);
+		context.fillStyle = silhouetteColour;
+		context.fill();
+	};
+
 	var canvas = document.getElementById('myCanvas');
 	var context = canvas.getContext('2d');
 	
@@ -23,13 +31,6 @@ var drawSilhouette = (function() {
 	
 		canvas.width  = Math.floor(longestLine * unitSize / 2)
 		canvas.height = allLineLengths.length * unitSize;
-	
-		function drawLine(rectY, rectWidth){ // Draws a line of code for the silhouette, not an actual line stroke.
-			context.beginPath();
-			context.rect(0, rectY, rectWidth, unitSize);
-			context.fillStyle = silhouetteColour;
-			context.fill();
-		};
 	
 		for (var i=0;i < allLineLengths.length;i++){
 			drawLine(
