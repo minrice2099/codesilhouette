@@ -12,7 +12,7 @@ var drawSilhouette = (function() {
 		context.fillStyle = silhouetteColour;
 		context.fill();
 	}
-
+	
 	return function() {
 		var s = document.getElementById("codeArea").value;
 		
@@ -20,32 +20,32 @@ var drawSilhouette = (function() {
 		if (!s) {
 			return;
 		}
-	
+		
 		// Strip carriage returns (Windows platform only), then split on new lines
 		var lines = s.replace(/\r/g, "").split("\n");
 		var allLineLengths = new Array();
-	
+		
 		var longestLine = 0;
 		for (var i = 0; i < lines.length; i++) {
 			allLineLengths.push(lines[i].length);
-	
+			
 			if (lines[i].length > longestLine) {
 				longestLine = lines[i].length;
 			}
 		}
-	
+		
 		canvas.width  = Math.floor(longestLine * unitSize / 2);
 		canvas.height = allLineLengths.length * unitSize;
-	
+		
 		for (var i = 0; i < allLineLengths.length; i++) {
 			drawLine(
-				i * unitSize, // Line Y position. Increment 
-				Math.floor(allLineLengths[i] * unitSize / 2) 
+				i * unitSize, // Line Y position. Increment
+				Math.floor(allLineLengths[i] * unitSize / 2)
 			);
 		}
-	
+		
 		var dataURL = canvas.toDataURL();
-	
+		
 		var canvasImg = document.getElementById("canvasImg");
 		canvasImg.src = dataURL;
 		canvasImg.style.display = "inline";
