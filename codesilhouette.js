@@ -1,4 +1,5 @@
 var drawSilhouette = (function() {
+	"use strict";
 	var canvas = document.getElementById('myCanvas');
 	var context = canvas.getContext('2d');
 	var unitSize = 5;
@@ -13,7 +14,7 @@ var drawSilhouette = (function() {
 	}
 
 	return function() {
-		s = document.getElementById("codeArea").value;
+		var s = document.getElementById("codeArea").value;
 		
 		// Basic sanity check for any actual input
 		if (!s) {
